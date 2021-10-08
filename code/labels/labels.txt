@@ -1,0 +1,19 @@
+VARIABLE;DESCRIPTION
+RES;Renewable Energy Source
+CAP;Capacity
+COD;Commissioning Date
+DOD;Decommissioning Date
+COY;Comissioning Year
+DOY;Decommissioning Year
+HUB;Hubheight
+ROD;Rotordiameter
+ALG;Alignment
+INC;Inclination
+SYS;System
+TYP;Type
+LAT;Latitude
+LON;Longitude
+SRC;Source
+SID;Source ID
+NTE;Note
+ACT;Data Actuality

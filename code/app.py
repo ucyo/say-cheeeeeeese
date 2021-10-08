@@ -1,4 +1,5 @@
 import intake
+import geopandas as gpd
 from satsearch import Search
 from const import germany_bbox, selection
 
@@ -10,6 +11,7 @@ URL = "https://earth-search.aws.element84.com/v0"
 
 def main():
     catalog = get_intake_catalog(dates, germany_bbox, cloud_coverage, data_coverage)
+    pv_labels = gpd.read_file('labels/labels.geojson')
 
 
 def get_intake_catalog(dates, bbox, cc, dc):
