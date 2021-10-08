@@ -6,6 +6,11 @@ authors = ["Uğur Çayoğlu <cayoglu@me.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
+sat-search = "^0.3.0"
+intake = "^0.6.3"
+intake-stac = "^0.3.0"
+geopandas = "^0.10.1"
+rasterio = "^1.2.9"
 
 [tool.poetry.dev-dependencies]
 pytest = "^3.4"
