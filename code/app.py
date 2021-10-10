@@ -2,6 +2,7 @@ import intake
 import geopandas as gpd
 import rasterio
 from rasterio.mask import mask
+from rasterio.enums import Resampling
 from satsearch import Search
 from const import germany_bbox, selection
 from matplotlib import pyplot as plt
@@ -78,3 +79,14 @@ def _get_intake_catalog(dates, bbox, cc, dc):
     )
     items = results.items()
     return intake.open_stac_item_collection(items)
+
+
+def _scl_resampling(folder, mode):
+    scl_fp = os.path.join(folder, "SCL.tif")
+    if mode == "10m":
+        ref = rasterio.open(os.path.join(folder, ref_10m))
+    elif mode == "60m":
+        ref = rasterio.open(os.path.join(folder, ref_60m))
+    else:
+        raise Exception("Mode not recognised")
+    return rasterio.open(scl_fp).read(out_shape=(ref.count, ref.height, ref.width), resampling=Resampling.nearest)
