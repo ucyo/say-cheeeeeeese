@@ -19,7 +19,8 @@ pytest = "^3.4"
 black = "^21.9b0"
 
 [tool.poetry.scripts]
-main = "app:main"
+links = "app:generate_download_script"
+masks = "app:generate_base_masks"
 
 [tool.black]
 line-length = 140
