@@ -12,11 +12,14 @@ cloud_coverage = 5  # 0 - 100%
 data_coverage = 80  # 0 - 100%
 dates = "2017-01-01/2018-05-01"
 URL = "https://earth-search.aws.element84.com/v0"
+ref_10m = "B02.tif"
+ref_20m = "B05.tif"
+ref_60m = "B01.tif"
 
 
 def generate_base_masks():
     base = sys.argv[1]
-    resolution_repr = {"10m": "B02.tif", "20m": "B05.tif", "60m": "B01.tif"}
+    resolution_repr = {"10m": ref_10m, "20m": ref_20m, "60m": ref_60m}
     pv_labels = gpd.read_file("labels/labels.geojson")
     for res, band in resolution_repr.items():
         fp = os.path.join(base, band)
